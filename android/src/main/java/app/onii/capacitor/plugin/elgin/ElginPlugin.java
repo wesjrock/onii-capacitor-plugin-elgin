@@ -67,4 +67,23 @@ public class ElginPlugin extends Plugin {
         ret.put("resultCode", result);
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void printQrcode(PluginCall call) {
+        String text = call.getString("text");
+        String align = call.getString("align", "Esquerda");
+        int qrSize = call.getInt("qrSize", 4);
+
+        if (text == null) {
+            call.reject("Text parameter is required");
+            return;
+        }
+
+        int result = implementation.printQrcode(text, align, qrSize);
+        
+        JSObject ret = new JSObject();
+        ret.put("success", result == 0);
+        ret.put("resultCode", result);
+        call.resolve(ret);
+    }
 }

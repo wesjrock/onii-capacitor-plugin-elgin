@@ -48,4 +48,20 @@ public class Elgin {
         
         return printerService.imprimeTexto(textParams);
     }
+
+    public int printQrcode(String text, String align, int qrSize) {
+        if (printerService == null) {
+            Log.e("Elgin", "PrinterService not initialized. Call init() first.");
+            return -1;
+        }
+
+        Log.i("Elgin", "Printing QR Code: " + text);
+        
+        Map<String, Object> qrParams = new HashMap<>();
+        qrParams.put("text", text);
+        qrParams.put("align", align);
+        qrParams.put("qrSize", qrSize);
+        
+        return printerService.imprimeQR_CODE(qrParams);
+    }
 }

@@ -13,4 +13,10 @@ export interface ElginPlugin {
     isUnderline?: boolean;
     isBold?: boolean;
   }): Promise<{ success: boolean; resultCode: number }>;
+
+  printQrcode(options: {
+    text: string;
+    align?: string; // "Esquerda", "Centralizado", "Direita"
+    qrSize?: number; // QR code size
+  }): Promise<{ success: boolean; resultCode: number }>;
 }

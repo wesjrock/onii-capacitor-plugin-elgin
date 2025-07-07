@@ -29,4 +29,13 @@ export class ElginWeb extends WebPlugin implements ElginPlugin {
     console.log('Imprimindo: ', options);
     return { success: true, resultCode: 0 };
   }
+
+  async printQrcode(options: {
+    text: string;
+    align?: string;
+    qrSize?: number;
+  }): Promise<{ success: boolean; resultCode: number }> {
+    console.log('Printing QR Code: ', options);
+    return { success: true, resultCode: 0 };
+  }
 }

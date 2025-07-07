@@ -17,6 +17,7 @@ npx cap sync
 * [`initPlugin()`](#initplugin)
 * [`initPrinter()`](#initprinter)
 * [`printText(...)`](#printtext)
+* [`printQrcode(...)`](#printqrcode)
 
 </docgen-index>
 
@@ -69,6 +70,21 @@ printText(options: { text: string; align?: string; font?: string; fontSize?: num
 | Param         | Type                                                                                                                      |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | **`options`** | <code>{ text: string; align?: string; font?: string; fontSize?: number; isUnderline?: boolean; isBold?: boolean; }</code> |
+
+**Returns:** <code>Promise&lt;{ success: boolean; resultCode: number; }&gt;</code>
+
+--------------------
+
+
+### printQrcode(...)
+
+```typescript
+printQrcode(options: { text: string; align?: string; qrSize?: number; }) => Promise<{ success: boolean; resultCode: number; }>
+```
+
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code>{ text: string; align?: string; qrSize?: number; }</code> |
 
 **Returns:** <code>Promise&lt;{ success: boolean; resultCode: number; }&gt;</code>
 
