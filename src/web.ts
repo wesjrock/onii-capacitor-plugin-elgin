@@ -46,4 +46,12 @@ export class ElginWeb extends WebPlugin implements ElginPlugin {
     console.log('Paper cut executed successfully (web simulation)');
     return { success: true, resultCode: 0 };
   }
+
+  async jumpLines(options: {
+    lines?: number;
+  }): Promise<{ success: boolean; resultCode: number }> {
+    console.log('Jumping lines with options: ', options);
+    console.log('Lines jumped successfully (web simulation)');
+    return { success: true, resultCode: 0 };
+  }
 }

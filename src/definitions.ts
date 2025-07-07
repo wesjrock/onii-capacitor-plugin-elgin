@@ -23,4 +23,8 @@ export interface ElginPlugin {
   cutPaper(options: {
     lines?: number; // Number of lines to advance before cutting (default: 1)
   }): Promise<{ success: boolean; resultCode: number }>;
+
+  jumpLines(options: {
+    lines?: number; // Number of lines to advance (default: 1)
+  }): Promise<{ success: boolean; resultCode: number }>;
 }

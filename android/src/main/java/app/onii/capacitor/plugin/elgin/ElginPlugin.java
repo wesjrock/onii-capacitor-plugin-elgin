@@ -106,4 +106,22 @@ public class ElginPlugin extends Plugin {
         ret.put("resultCode", result);
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void jumpLines(PluginCall call) {
+        int lines = call.getInt("lines", 1);
+
+        // Debug logging
+        Log.d("ElginPlugin", "Jumping " + lines + " lines");
+
+        int result = implementation.jumpLines(lines);
+        
+        // Debug logging for result
+        Log.d("ElginPlugin", "Jump lines completed with result code: " + result);
+        
+        JSObject ret = new JSObject();
+        ret.put("success", result == 0);
+        ret.put("resultCode", result);
+        call.resolve(ret);
+    }
 }

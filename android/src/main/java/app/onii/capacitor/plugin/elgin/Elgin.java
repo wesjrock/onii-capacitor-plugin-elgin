@@ -78,4 +78,18 @@ public class Elgin {
         
         return printerService.cutPaper(cutParams);
     }
+
+    public int jumpLines(int lines) {
+        if (printerService == null) {
+            Log.e("Elgin", "PrinterService not initialized. Call init() first.");
+            return -1;
+        }
+
+        Log.i("Elgin", "Jumping " + lines + " lines");
+        
+        Map<String, Object> linesParams = new HashMap<>();
+        linesParams.put("quant", lines);
+        
+        return printerService.AvancaLinhas(linesParams);
+    }
 }

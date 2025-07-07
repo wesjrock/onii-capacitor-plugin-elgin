@@ -19,6 +19,7 @@ npx cap sync
 * [`printText(...)`](#printtext)
 * [`printQrcode(...)`](#printqrcode)
 * [`cutPaper(...)`](#cutpaper)
+* [`jumpLines(...)`](#jumplines)
 
 </docgen-index>
 
@@ -96,6 +97,21 @@ printQrcode(options: { text: string; align?: string; qrSize?: number; }) => Prom
 
 ```typescript
 cutPaper(options: { lines?: number; }) => Promise<{ success: boolean; resultCode: number; }>
+```
+
+| Param         | Type                             |
+| ------------- | -------------------------------- |
+| **`options`** | <code>{ lines?: number; }</code> |
+
+**Returns:** <code>Promise&lt;{ success: boolean; resultCode: number; }&gt;</code>
+
+--------------------
+
+
+### jumpLines(...)
+
+```typescript
+jumpLines(options: { lines?: number; }) => Promise<{ success: boolean; resultCode: number; }>
 ```
 
 | Param         | Type                             |
