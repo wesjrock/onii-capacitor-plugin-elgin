@@ -19,4 +19,30 @@ public class ElginPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void initPlugin(PluginCall call) {
+        getActivity()
+            .runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        implementation.init(getActivity());
+                    }
+                }
+            );
+
+        JSObject ret = new JSObject();
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void initPrinter(PluginCall call) {
+        int result = implementation.initPrinter();
+        
+        JSObject ret = new JSObject();
+        ret.put("success", result == 0);
+        ret.put("resultCode", result);
+        call.resolve(ret);
+    }
 }

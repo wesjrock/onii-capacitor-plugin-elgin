@@ -14,6 +14,9 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`initPlugin()`](#initplugin)
+* [`initPrinter()`](#initprinter)
+* [`printText(...)`](#printtext)
 
 </docgen-index>
 
@@ -31,6 +34,43 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 | **`options`** | <code>{ value: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### initPlugin()
+
+```typescript
+initPlugin() => Promise<{}>
+```
+
+**Returns:** <code>Promise&lt;{}&gt;</code>
+
+--------------------
+
+
+### initPrinter()
+
+```typescript
+initPrinter() => Promise<{ success: boolean; resultCode: number; }>
+```
+
+**Returns:** <code>Promise&lt;{ success: boolean; resultCode: number; }&gt;</code>
+
+--------------------
+
+
+### printText(...)
+
+```typescript
+printText(options: { text: string; align: number; font: string; fontSize: number; }) => Promise<boolean>
+```
+
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code>{ text: string; align: number; font: string; fontSize: number; }</code> |
+
+**Returns:** <code>Promise&lt;boolean&gt;</code>
 
 --------------------
 

@@ -7,4 +7,24 @@ export class ElginWeb extends WebPlugin implements ElginPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async initPlugin(): Promise<{}> {
+    console.log('Initializing Plugin!');
+    return {};
+  }
+
+  async initPrinter(): Promise<{ success: boolean; resultCode: number }> {
+    console.log('Initializing Printer!');
+    return { success: true, resultCode: 0 };
+  }
+
+  async printText(options: {
+    text: string;
+    align: number;
+    font: string;
+    fontSize: number;
+  }): Promise<boolean> {
+    console.log('Imprimindo: ', options);
+    return true;
+  }
 }
