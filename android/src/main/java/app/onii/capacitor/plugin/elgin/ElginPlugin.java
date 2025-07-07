@@ -45,4 +45,26 @@ public class ElginPlugin extends Plugin {
         ret.put("resultCode", result);
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void printText(PluginCall call) {
+        String text = call.getString("text");
+        String align = call.getString("align", "Esquerda");
+        String font = call.getString("font", "FONT A");
+        int fontSize = call.getInt("fontSize", 0);
+        boolean isUnderline = call.getBoolean("isUnderline", false);
+        boolean isBold = call.getBoolean("isBold", false);
+
+        if (text == null) {
+            call.reject("Text parameter is required");
+            return;
+        }
+
+        int result = implementation.printText(text, align, font, fontSize, isUnderline, isBold);
+        
+        JSObject ret = new JSObject();
+        ret.put("success", result == 0);
+        ret.put("resultCode", result);
+        call.resolve(ret);
+    }
 }

@@ -7,8 +7,10 @@ export interface ElginPlugin {
 
   printText(options: {
     text: string;
-    align: number;
-    font: string;
-    fontSize: number;
-  }): Promise<boolean>;
+    align?: string; // "Esquerda", "Centralizado", "Direita"
+    font?: string; // "FONT A" or "FONT B"
+    fontSize?: number;
+    isUnderline?: boolean;
+    isBold?: boolean;
+  }): Promise<{ success: boolean; resultCode: number }>;
 }

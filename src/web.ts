@@ -20,11 +20,13 @@ export class ElginWeb extends WebPlugin implements ElginPlugin {
 
   async printText(options: {
     text: string;
-    align: number;
-    font: string;
-    fontSize: number;
-  }): Promise<boolean> {
+    align?: string;
+    font?: string;
+    fontSize?: number;
+    isUnderline?: boolean;
+    isBold?: boolean;
+  }): Promise<{ success: boolean; resultCode: number }> {
     console.log('Imprimindo: ', options);
-    return true;
+    return { success: true, resultCode: 0 };
   }
 }

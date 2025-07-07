@@ -63,14 +63,14 @@ initPrinter() => Promise<{ success: boolean; resultCode: number; }>
 ### printText(...)
 
 ```typescript
-printText(options: { text: string; align: number; font: string; fontSize: number; }) => Promise<boolean>
+printText(options: { text: string; align?: string; font?: string; fontSize?: number; isUnderline?: boolean; isBold?: boolean; }) => Promise<{ success: boolean; resultCode: number; }>
 ```
 
-| Param         | Type                                                                          |
-| ------------- | ----------------------------------------------------------------------------- |
-| **`options`** | <code>{ text: string; align: number; font: string; fontSize: number; }</code> |
+| Param         | Type                                                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>{ text: string; align?: string; font?: string; fontSize?: number; isUnderline?: boolean; isBold?: boolean; }</code> |
 
-**Returns:** <code>Promise&lt;boolean&gt;</code>
+**Returns:** <code>Promise&lt;{ success: boolean; resultCode: number; }&gt;</code>
 
 --------------------
 
