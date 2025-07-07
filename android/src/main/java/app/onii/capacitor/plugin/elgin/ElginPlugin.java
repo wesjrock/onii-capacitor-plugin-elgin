@@ -1,5 +1,7 @@
 package app.onii.capacitor.plugin.elgin;
 
+import android.util.Log;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -80,6 +82,24 @@ public class ElginPlugin extends Plugin {
         }
 
         int result = implementation.printQrcode(text, align, qrSize);
+        
+        JSObject ret = new JSObject();
+        ret.put("success", result == 0);
+        ret.put("resultCode", result);
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void cutPaper(PluginCall call) {
+        int lines = call.getInt("lines", 1);
+
+        // Debug logging
+        Log.d("ElginPlugin", "Paper cutting initiated with " + lines + " lines advance");
+
+        int result = implementation.cutPaper(lines);
+        
+        // Debug logging for result
+        Log.d("ElginPlugin", "Paper cut completed with result code: " + result);
         
         JSObject ret = new JSObject();
         ret.put("success", result == 0);

@@ -64,4 +64,18 @@ public class Elgin {
         
         return printerService.imprimeQR_CODE(qrParams);
     }
+
+    public int cutPaper(int lines) {
+        if (printerService == null) {
+            Log.e("Elgin", "PrinterService not initialized. Call init() first.");
+            return -1;
+        }
+
+        Log.i("Elgin", "Cutting paper with " + lines + " lines advance");
+        
+        Map<String, Object> cutParams = new HashMap<>();
+        cutParams.put("quant", lines);
+        
+        return printerService.cutPaper(cutParams);
+    }
 }

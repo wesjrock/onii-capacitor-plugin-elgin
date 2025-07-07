@@ -38,4 +38,12 @@ export class ElginWeb extends WebPlugin implements ElginPlugin {
     console.log('Printing QR Code: ', options);
     return { success: true, resultCode: 0 };
   }
+
+  async cutPaper(options: {
+    lines?: number;
+  }): Promise<{ success: boolean; resultCode: number }> {
+    console.log('Cutting paper with options: ', options);
+    console.log('Paper cut executed successfully (web simulation)');
+    return { success: true, resultCode: 0 };
+  }
 }
