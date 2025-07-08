@@ -41,6 +41,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+    // ESTA LINHA EVITA O ERRO DUPLICATED CLASS NO CASO DE TENTAR IMPORTAR O ZXING MAIS DE UMA VEZ
+    // configurations {
+    //     all*.exclude group: 'com.google.zxing'
+    // }
 }
 
 repositories {
@@ -60,6 +64,8 @@ dependencies {
 
     implementation files('src\\libs\\e1-V02.26.01-release.aar')
     implementation files('src\\libs\\minipdvm8-v01.00.00-release.aar')
+    implementation files('src\\libs\\InterfaceAutomacao-v2.0.0.12.aar')
+    implementation files('src\\libs\\satelgin-8.1.1-release.aar')
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
@@ -68,6 +74,10 @@ dependencies {
     // Outras bibliotecas necessárias para o plugin
     // AndroidX libraries
     implementation("androidx.startup:startup-runtime:1.1.0")
+
+    // necessário para comunicação com a linha PosGo
+    implementation("io.reactivex.rxjava2:rxandroid:2.0.1")
+    implementation("io.reactivex.rxjava2:rxjava:2.1.8")
 
     // zxing library for QR code functionality
     implementation 'com.google.zxing:core:3.5.1'
