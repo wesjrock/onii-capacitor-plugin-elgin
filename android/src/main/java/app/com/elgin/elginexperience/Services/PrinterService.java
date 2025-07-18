@@ -85,17 +85,17 @@ public class PrinterService {
         int styleValue = 0;
 
         // ALINHAMENTO VALUE
-        switch (align) {
-            case "Esquerda":
-                alignValue = 0;
-                break;
-            case "Centralizado":
-                alignValue = 1;
-                break;
-            default:
-                alignValue = 2;
-                break;
-        }
+//        switch (align) {
+//            case "Esquerda":
+//                alignValue = 0;
+//                break;
+//            case "Centralizado":
+//                alignValue = 1;
+//                break;
+//            default:
+//                alignValue = 2;
+//                break;
+//        }
 
         //STILO VALUE
         if (font.equals("FONT B")) {
